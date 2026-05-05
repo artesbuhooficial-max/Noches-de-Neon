@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noches de Neón - Dossier Bodas 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-pink: #ff6b9d;
+            --neon-blue: #4ecdc4;
+            --dark-bg: #1a1a2e;
+            --darker-bg: #0f0f1a;
+            --text-light: #f0f0f0;
+            --text-muted: #b0b0b0;
+            --gold: #ffd700;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--darker-bg);
+            color: var(--text-light);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(15, 15, 26, 0.85);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            padding: 15px 50px;
+            box-shadow: 0 5px 30px rgba(255, 107, 157, 0.1);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--neon-pink);
+            text-shadow: 0 0 20px rgba(255, 107, 157, 0.5);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--neon-pink);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--neon-pink);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section con Video Background */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .hero-video-container video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .hero-video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to bottom,
+                rgba(15, 15, 26, 0.4) 0%,
+                rgba(15, 15, 26, 0.6) 50%,
+                rgba(15, 15, 26, 0.85) 100%
+            );
+            z-index: 1;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            animation: fadeInUp 1s ease;
+            position: relative;
+            padding: 0 20px;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--neon-pink), var(--neon-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: glow 2s ease-in-out infinite alternate;
+            text-shadow: 0 0 60px rgba(255, 107, 157, 0.3);
+        }
+
+        @keyframes glow {
+            from { filter: drop-shadow(0 0 20px rgba(255, 107, 157, 0.3)); }
+            to { filter: drop-shadow(0 0 40px rgba(78, 205, 196, 0.5)); }
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 40px;
+            font-weight: 300;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 12px 30px;
+            border: 2px solid var(--neon-pink);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--neon-pink);
+            animation: pulse 2s infinite;
+            background: rgba(15, 15, 26, 0.6);
+            backdrop-filter: blur(5px);
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(255, 107, 157, 0.4); }
+            50% { box-shadow: 0 0 0 15px rgba(255, 107, 157, 0); }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            z-index: 2;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-20px); }
+            60% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        /* Section Styles */
+        section {
+            padding: 100px 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue));
+            margin: 20px auto;
+            border-radius: 2px;
+        }
+
+        /* Quiénes Somos */
+        .about {
+            background: var(--dark-bg);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-text {
+            animation: slideInLeft 1s ease;
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--neon-blue);
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 107, 157, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(255, 107, 157, 0.2);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--neon-pink);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 5px;
+        }
+
+        .about-image {
+            position: relative;
+            animation: slideInRight 1s ease;
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .floating-card {
+            position: absolute;
+            bottom: -30px;
+            left: -30px;
+            background: linear-gradient(135deg, var(--neon-pink), var(--neon-blue));
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(255, 107, 157, 0.3);
+            animation: floatCard 3s ease-in-out infinite;
+        }
+
+        @keyframes floatCard {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .floating-card p {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* Why Choose Us */
+        .why-us {
+            background: var(--darker-bg);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 107, 157, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .feature-card:hover::before {
+            left: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--neon-pink);
+            box-shadow: 0 20px 40px rgba(255, 107, 157, 0.15);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px;
+            background: linear-gradient(135deg, var(--neon-pink), var(--neon-blue));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Extras & Regalos */
+        .extras {
+            background: var(--dark-bg);
+        }
+
+        .extras-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .extras-note {
+            text-align: center;
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid var(--gold);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 50px;
+            color: var(--gold);
+            font-weight: 500;
+        }
+
+        .extras-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .extra-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .extra-item:nth-child(1) { border-top: 4px solid var(--neon-pink); }
+        .extra-item:nth-child(2) { border-top: 4px solid var(--neon-blue); }
+        .extra-item:nth-child(3) { border-top: 4px solid var(--gold); }
+        .extra-item:nth-child(4) { border-top: 4px solid #9b59b6; }
+
+        .extra-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .extra-item h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .extra-item p {
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        .extra-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--neon-pink);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* Video Section */
+        .video-section {
+            background: var(--darker-bg);
+            text-align: center;
+        }
+
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .video-placeholder {
+            background: linear-gradient(135deg, #2a2a4a, #1a1a2e);
+            aspect-ratio: 16/9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .video-placeholder:hover {
+            background: linear-gradient(135deg, #3a3a5a, #2a2a4a);
+        }
+
+        .play-button {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--neon-pink), var(--neon-blue));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 107, 157, 0.4);
+        }
+
+        .video-placeholder:hover .play-button {
+            transform: scale(1.1);
+        }
+
+        .video-placeholder p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: var(--dark-bg);
+        }
+
+        .testimonials-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 50px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .testimonial-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-style: italic;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            color: var(--text-light);
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--neon-pink);
+            font-size: 1.1rem;
+        }
+
+        .testimonial-date {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: var(--neon-pink);
+            transform: scale(1.3);
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.1), rgba(78, 205, 196, 0.1));
+            text-align: center;
+            padding: 120px 50px;
+        }
+
+        .cta h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--neon-pink), var(--neon-blue));
+            color: white;
+            box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 107, 157, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-light);
+            border: 2px solid var(--neon-pink);
+        }
+
+        .btn-secondary:hover {
+            background: var(--neon-pink);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--darker-bg);
+            padding: 60px 50px 30px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--neon-pink);
+            margin-bottom: 20px;
+        }
+
+        .footer-contact {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-contact a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-contact a:hover {
+            color: var(--neon-pink);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-links a:hover {
+            background: var(--neon-pink);
+            transform: translateY(-5px);
+            border-color: var(--neon-pink);
+        }
+
+        .footer-bottom {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3rem; }
+            .about-grid { grid-template-columns: 1fr; }
+            .extras-grid { grid-template-columns: 1fr; }
+            .stats { flex-direction: column; }
+            nav { padding: 15px 20px; }
+            .nav-links { display: none; }
+            section { padding: 60px 20px; }
+        }
+
+        /* Scroll animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="logo">Noches de Neón</div>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#quienes-somos">Quiénes Somos</a></li>
+            <li><a href="#por-que">¿Por Qué?</a></li>
+            <li><a href="#extras">Extras</a></li>
+            <li><a href="#video">Vídeo</a></li>
+            <li><a href="#opiniones">Opiniones</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section con Video Background -->
+    <section class="hero" id="inicio">
+        <div class="hero-video-container">
+            <video autoplay muted loop playsinline poster="">
+                <source src="video_boda_noches_neon.mp4" type="video/mp4">
+                Tu navegador no soporta videos HTML5.
+            </video>
+            <div class="hero-video-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1>Noches de Neón</h1>
+            <p class="hero-subtitle">Música en directo para tu boda</p>
+            <div class="hero-badge">✨ 54 bodas en 2025 ✨</div>
+        </div>
+        <div class="scroll-indicator">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--neon-pink)" stroke-width="2">
+                <path d="M12 5v14M19 12l-7 7-7-7"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Quiénes Somos -->
+    <section class="about" id="quienes-somos">
+        <h2 class="section-title reveal">¿Quiénes Somos?</h2>
+        <div class="about-grid">
+            <div class="about-text reveal">
+                <h3>Banda especializada en bodas</h3>
+                <p>Somos <strong>Noches de Neón</strong>, una banda que cuida cada detalle para que todo salga perfecto en el día más importante de tu vida.</p>
+                <p>Con más de <strong>5 años en el sector nupcial</strong> y una media de <strong>60 bodas al año</strong>, sabemos exactamente lo que necesitas para que tu fiesta sea inolvidable.</p>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-number">54</span>
+                        <span class="stat-label">Bodas 2025</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">5+</span>
+                        <span class="stat-label">Años experiencia</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">60</span>
+                        <span class="stat-label">Bodas/año</span>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image reveal">
+                <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600&h=400&fit=crop" alt="Boda con música en directo">
+                <div class="floating-card">
+                    <p>🎵 Músicos 100% profesionales</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ¿Por Qué Noches de Neón? -->
+    <section class="why-us" id="por-que">
+        <h2 class="section-title reveal">¿Por Qué Noches de Neón?</h2>
+        <div class="features-grid">
+            <div class="feature-card reveal">
+                <div class="feature-icon">🎤</div>
+                <h3>Experiencia Profesional</h3>
+                <p>Show de alto nivel con músicos 100% profesionales con trayectoria junto a artistas de primer nivel como Antonio Orozco, Rozalén y La Oreja de Van Gogh.</p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon">✨</div>
+                <h3>Personalización Máxima</h3>
+                <p>Preparación de dos canciones a elección de los novios fuera de repertorio, con la posibilidad de cantarlas junto a la banda.</p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon">🎁</div>
+                <h3>Regalos y Ventajas</h3>
+                <p>Descuentos y extras exclusivos por reserva anticipada. Cuanto antes reserves, más ventajas obtienes.</p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon">🔊</div>
+                <h3>Equipo de Sonido Premium</h3>
+                <p>Equipo de sonido de primer nivel valorado en 40.000€ para una calidad de audio excepcional en tu evento.</p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon">🛡️</div>
+                <h3>Totalmente Legal</h3>
+                <p>Seguro de responsabilidad civil y toda la documentación en regla para que no tengas que preocuparte de nada.</p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon">💳</div>
+                <h3>Pago Financiable</h3>
+                <p>Facilitamos el pago para que no tengas que renunciar a la música en directo en tu boda por motivos económicos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Extras & Regalos -->
+    <section class="extras" id="extras">
+        <h2 class="section-title reveal">Extras & Regalos</h2>
+        <div class="extras-container">
+            <div class="extras-note reveal">
+                ⚠️ Estos extras están sujetos al tipo de contratación. Consulta condiciones específicas para tu evento.
+            </div>
+            <div class="extras-grid">
+                <div class="extra-item reveal">
+                    <span class="extra-badge">EXCLUSIVO</span>
+                    <h3>🎵 Canción Personalizada</h3>
+                    <p>Composición inédita que narra vuestra historia de amor. Un recuerdo único y eterno de vuestro día especial, creada específicamente para vosotros.</p>
+                </div>
+                <div class="extra-item reveal">
+                    <span class="extra-badge">INCLUIDO</span>
+                    <h3>🎤 Dos Canciones a Elección</h3>
+                    <p>Preparadas fuera de repertorio especialmente para vosotros. Con opción de subir al escenario y cantarlas junto a la banda. ¡Hacedlo inolvidable!</p>
+                </div>
+                <div class="extra-item reveal">
+                    <span class="extra-badge">GRATIS</span>
+                    <h3>🎉 Karaoke en Directo</h3>
+                    <p>Para invitados y novios. ¡Todos pueden ser estrellas! Momentos de diversión garantizada donde todos participan en la fiesta.</p>
+                </div>
+                <div class="extra-item reveal">
+                    <span class="extra-badge">100€/h</span>
+                    <h3>🎧 Añade DJ</h3>
+                    <p>Con la contratación del quinteto, te ofrecemos el servicio de DJ a un precio irrepetible. Música sin interrupciones toda la noche.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section" id="video">
+        <h2 class="section-title reveal">Gózatelo con Nosotros</h2>
+        <p style="text-align: center; color: var(--text-muted); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
+            Vive la experiencia Noches de Neón. Así se vive una fiesta con nosotros y nuestro equipo.
+        </p>
+        <div class="video-container reveal">
+            <div class="video-placeholder" onclick="alert('Aquí iría el vídeo promocional de Sergio Amaro y el equipo')">
+                <div class="play-button">▶</div>
+                <p>Ver vídeo de la experiencia Noches de Neón</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="opiniones">
+        <h2 class="section-title reveal">Lo Que Dicen de Nosotros</h2>
+        <div class="testimonials-slider reveal">
+            <div class="testimonial-card" id="testimonial-1">
+                <p class="testimonial-text">"Fue la mejor decisión de nuestra boda. La energía que transmiten es increíble, ¡todos los invitados bailaron hasta el amanecer!"</p>
+                <p class="testimonial-author">María & Carlos</p>
+                <p class="testimonial-date">Boda - Septiembre 2025</p>
+            </div>
+            <div class="slider-dots">
+                <span class="dot active" onclick="showTestimonial(0)"></span>
+                <span class="dot" onclick="showTestimonial(1)"></span>
+                <span class="dot" onclick="showTestimonial(2)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="contacto">
+        <h2 class="reveal">¿Listos para tu Gran Día?</h2>
+        <p class="reveal">No dejes la música de tu boda en manos de cualquiera. Confía en profesionales con años de experiencia en el sector nupcial.</p>
+        <div class="cta-buttons reveal">
+            <a href="https://wa.me/34649635907" class="btn btn-primary" target="_blank">
+                💬 Escríbenos por WhatsApp
+            </a>
+            <a href="mailto:contratacion@artesbuho.com" class="btn btn-secondary">
+                📧 Solicitar Información
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Noches de Neón</div>
+            <p style="color: var(--text-muted); margin-bottom: 20px;">Música en directo para bodas inolvidables</p>
+
+            <div class="footer-contact">
+                <a href="tel:+34649635907">📱 649 635 907</a>
+                <a href="tel:+34626849141">📱 626 849 141</a>
+                <a href="mailto:contratacion@artesbuho.com">✉️ contratacion@artesbuho.com</a>
+            </div>
+
+            <div class="social-links">
+                <a href="https://www.nochesdeneon.com" target="_blank" title="Web">🌐</a>
+                <a href="https://instagram.com/nochesdeneonmusic" target="_blank" title="Instagram">📷</a>
+                <a href="https://bodas.net" target="_blank" title="Bodas.net">💒</a>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Noches de Neón. Todos los derechos reservados.</p>
+                <p style="margin-top: 10px; font-size: 0.8rem;">Presentado por Samuel Alejandro Superbruno</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll reveal animation
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Testimonials slider
+        const testimonials = [
+            {
+                text: "Fue la mejor decisión de nuestra boda. La energía que transmiten es increíble, ¡todos los invitados bailaron hasta el amanecer!",
+                author: "María & Carlos",
+                date: "Boda - Septiembre 2025"
+            },
+            {
+                text: "Nos prepararon nuestra canción favorita y cantamos con ellos. Un momento mágico que recordaremos siempre. Profesionales de principio a fin.",
+                author: "Ana & Pedro",
+                date: "Boda - Junio 2025"
+            },
+            {
+                text: "El karaoke fue todo un éxito. Desde los abuelos hasta los niños, todos participaron. ¡Agujetas al día siguiente de tanto bailar!",
+                author: "Lucía & Miguel",
+                date: "Boda - Agosto 2025"
+            }
+        ];
+
+        let currentTestimonial = 0;
+
+        function showTestimonial(index) {
+            currentTestimonial = index;
+            const card = document.querySelector('.testimonial-card');
+            const dots = document.querySelectorAll('.dot');
+
+            card.style.animation = 'none';
+            setTimeout(() => {
+                card.querySelector('.testimonial-text').textContent = `"${testimonials[index].text}"`;
+                card.querySelector('.testimonial-author').textContent = testimonials[index].author;
+                card.querySelector('.testimonial-date').textContent = testimonials[index].date;
+                card.style.animation = 'fadeIn 0.5s ease';
+            }, 10);
+
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        }
+
+        // Auto-advance testimonials
+        setInterval(() => {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        }, 5000);
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
